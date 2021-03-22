@@ -1,0 +1,11 @@
+Você vai criar um sistema que gerencie usuários dentro de um banco de dados.
+O banco de dados vai ser fictício e estará na classe InMemoryDB e você não poderá alterar essa classe.
+
+1. A classe usuário deverá ter obrigatoriamente um id (numérico e único para cada instância e deverá ser gerado automaticamente), email e senha e qualquer outro campo que você quiser.
+2. Na classe UserDAOInMemoryDB você deverá implementar os métedos da interface IUserDAO.
+3. Na função main, deverá ser apresentado um menu perguntando se o usuário deseja cadastrar, consultar, remover ou atualizar alguma informação do usuário.
+4. Na sua função main (Simicius), atravez de qual objeto você vai acessar o banco de dados para realizar as ações? (pense nisso, você já criou a classe que faz isso).
+5. Pense sobre o que é um método/atributo do tipo static.
+6. Você nesse momento está usando o banco de dados fictício em memória. Vamos supor que agora você deseja utilizar um banco de dados Oracle de verdade, pensando na estrutura desse projeto, o que você faria?
+    Isso implicaria em alterar muita coisa no código?
+7. Bora mlk você consegue, qualquer coisa chama o pai.
