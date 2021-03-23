@@ -7,4 +7,5 @@ import com.simicius.user.User;
 
 public class InMemoryDB {
     public static List <User> users = new ArrayList <User> ();
+
 }

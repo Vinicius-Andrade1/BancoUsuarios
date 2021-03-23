@@ -5,9 +5,9 @@ import java.util.List;
 import com.simicius.user.User;
 
 public interface IUserDAO {
-    public User selectUserById (int id);
+    public User selectUserById (String id);
     public List <User> selectAllUsers ();
-    public void updateUser (User user);
-    public void deleteUser ();
-    public void createUser ();
+    public void updateUser (String id, String em, String se);
+    public void deleteUser (String id);
+    public void createUser (User user);
 }
