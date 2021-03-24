@@ -42,13 +42,7 @@ public class Simicius {
 
                 User usuario = new User(email, senha);
 
-                if (acessor.verificarEmail(email)){
-                    acessor.createUser(usuario);
-                    System.out.println("\nUsuário criado com sucesso!\n");
-                } else {
-                    System.out.println("\nNão foi possível cadastrar o usuário, pois já existe um email '" + email + "' no nosso sistema!");
-                }
-
+                acessor.createUser(usuario);
             break;
 
             case 2:
@@ -70,12 +64,16 @@ public class Simicius {
             break;
 
             case 3:
+                if(acessor.selectAllUsers().isEmpty()){
+                    System.out.println("\nA lista está vazia! Não tem como deletar!\n");
+                } else {
 
                 System.out.print("Digite o ID que você quer buscar: ");
                 id = scan.nextLine();
 
-                System.out.println("Usuário removido com sucesso!");
+                System.out.println("\nUsuário removido com sucesso!\n");
                 acessor.deleteUser(id);
+                }
 
             break;
 
@@ -115,17 +113,14 @@ public class Simicius {
                         System.out.println(usuarios.get(i).toString());
                     }
                 }
-
             break;
 
             case 6:
             System.out.println("\nVocê está saindo do programa.....\n");
-
             break;
 
             default:
             System.out.println("\nOpção inválida!\n");
-
             break;
         }
 

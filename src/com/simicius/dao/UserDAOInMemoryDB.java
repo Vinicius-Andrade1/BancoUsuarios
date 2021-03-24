@@ -63,9 +63,7 @@ public class UserDAOInMemoryDB implements IUserDAO{
     public void deleteUser(String id) {
         
         for (int i = 0; i < InMemoryDB.users.size(); i++){
-            if (InMemoryDB.users.size() == 0){
-                System.out.println("A lista está vazia! Não tem como deletar!");
-            } else if (id.equals(InMemoryDB.users.get(i).getId())){
+            if (id.equals(InMemoryDB.users.get(i).getId())){
                 InMemoryDB.users.remove(i);
             } else {
                 System.out.println("Não há usuários com o id: " + id);
@@ -76,17 +74,26 @@ public class UserDAOInMemoryDB implements IUserDAO{
     @Override
     public void createUser(User user) {
 
-        InMemoryDB.users.add(user);
+        boolean retorno;
+
+        retorno = verificarEmail(user.getEmail());
+
+        if (retorno == false){
+            InMemoryDB.users.add(user);
+            System.out.println("\nUsuário criado com sucesso!\n");
+        } else {
+            System.out.println("\nNão foi possível cadastrar o usuário, pois já existe um email '" + user.getEmail() + "' no nosso sistema!\n");
+        }
 
     }
 
-    public boolean verificarEmail(String Email){
+    protected boolean verificarEmail(String email){
 
-        boolean flag = true;
+        boolean flag = false;
 
         for(int i = 0; i < InMemoryDB.users.size(); i++){
-            if(Email.equals(InMemoryDB.users.get(i).getEmail())){
-                flag = false;
+            if(email.equals(InMemoryDB.users.get(i).getEmail())){
+                flag = true;
             } else {
                 continue;
             }
@@ -96,7 +103,4 @@ public class UserDAOInMemoryDB implements IUserDAO{
 
     }
 
-    
-
-    
 }
