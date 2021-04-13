@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.simicius.dao.UserDAOInMemoryDB;
-import com.simicius.db.InMemoryDB;
 import com.simicius.user.User;
 
-public class Simicius {
+public class App {
     public static void main (String [] args) {
        
         UserDAOInMemoryDB acessor = new UserDAOInMemoryDB();
